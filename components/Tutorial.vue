@@ -120,5 +120,11 @@ export default {
   data: () => ({
     posts: [],
   }),
+  async fetch() {
+    const results = await this.$axios.get(
+      '/.netlify/functions/notion-get-pages/'
+    )
+    console.log(results)
+  },
 }
 </script>
