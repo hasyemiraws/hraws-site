@@ -1,0 +1,61 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+.container--full-width {
+  margin-left: calc(50% - 50vw);
+  margin-right: calc(50% - 50vw);
+  width: 100vw;
+}
+
+.section {
+  position: relative;
+  max-width: 1080px;
+
+  &--title {
+    font-weight: 700;
+    letter-spacing: 1.5px;
+    font-size: 3.5em;
+  }
+}
+
+.hero {
+  &--intro {
+    height: 60vh;
+    display: flex;
+    justify-content: flex-start;
+    align-items: center;
+  }
+
+  &--label {
+    .hero-title {
+      display: inline;
+      letter-spacing: 2px;
+      font-family: neue-haas-unica, sans-serif;
+      font-weight: 700;
+      font-size: 3.2em;
+      line-height: 1.3em;
+      position: relative;
+
+      .about-me--more {
+        position: absolute;
+        top: 52%;
+        right: -65px;
+        padding: 0;
+
+        .post--more-arrow {
+          transition: all 0.3s ease;
+        }
+
+        &:hover .post--more-arrow {
+          transform: translate(calc(-50% + 5px), -50%);
+        }
+      }
+    }
+  }
+}
+
+hr {
+  border-top-width: 3px;
+  border-color: #202020;
+}
