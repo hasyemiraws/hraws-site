@@ -9,6 +9,7 @@
     "sourceMap": true,
     "strict": true,
     "noEmit": true,
+    "jsx": "preserve",
     "experimentalDecorators": true,
     "baseUrl": ".",
     "paths": {
