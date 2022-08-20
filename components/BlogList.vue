@@ -124,7 +124,10 @@
 <script>
 export default {
   props: {
-    pages: Array,
+    pages: {
+      type: Array,
+      default: () => [],
+    },
     showMoreStories: {
       type: Boolean,
       default: true,
