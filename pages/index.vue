@@ -76,7 +76,9 @@ export default Vue.extend({
     posts: [],
   }),
   async fetch() {
-    const endpoint = `${process.env.apiURL}/.netlify/functions/serverless-graphql`
+    const endpoint = `${
+      process.env.apiURL || ''
+    }/.netlify/functions/serverless-graphql`
     const graphqlQuery = {
       query: `query allPages { 
         getPages {
