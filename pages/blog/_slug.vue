@@ -22,21 +22,21 @@ export default {
   components: {
     DefaultLayout,
   },
+  async asyncData({ params, $notion }) {
+    const blockMap = await $notion.getPageBlocks(
+      params.pageId.replaceAll('-', '')
+    )
+    if (!blockMap || blockMap.error) {
+      return error({ statusCode: 404, message: 'Post not found' })
+    }
+    return { blockMap }
+  },
   data() {
     return {
       blockMap: {},
       blockOverrides: { code: 'CustomCode' },
       pageLinkOptions: { component: 'NuxtLink', href: 'to' },
     }
-  },
-  async fetch() {
-    const blockMap = await this.$notion.getPageBlocks(
-      this.$route.params.pageId.replaceAll('-', '')
-    )
-    if (!blockMap || blockMap.error) {
-      return error({ statusCode: 404, message: 'Post not found' })
-    }
-    this.blockMap = blockMap
   },
 }
 </script>
