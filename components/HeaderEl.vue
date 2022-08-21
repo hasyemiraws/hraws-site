@@ -16,7 +16,9 @@
           >
             <ul class="nav__item">
               <li>
-                <NuxtLink to="/all-post/" title="tulisan"> tulisan </NuxtLink>
+                <NuxtLink to="/all-post/" title="tulisan">
+                  {{ $t('menu.tulisan') }}
+                </NuxtLink>
 
                 <ul class="nav__subitem">
                   <li>
@@ -31,13 +33,13 @@
                   target="_blank"
                   href="https://www.youtube.com/c/hasyemiraws"
                   title="youtube"
-                  >youtube</a
+                  >{{ $t('menu.youtube') }}</a
                 >
               </li>
               <li>
-                <NuxtLink to="/sedang-membaca/" title="sedang baca"
-                  >sedang baca</NuxtLink
-                >
+                <NuxtLink to="/sedang-membaca/" title="sedang baca">{{
+                  $t('menu.membaca')
+                }}</NuxtLink>
                 <ul class="nav__subitem">
                   <li>
                     <NuxtLink to="sedang-membaca"> sedang-membaca </NuxtLink>
@@ -50,10 +52,14 @@
                 </ul>
               </li>
               <li>
-                <NuxtLink to="/now/" title="now">now</NuxtLink>
+                <NuxtLink to="/now/" title="now">{{
+                  $t('menu.sekarang')
+                }}</NuxtLink>
               </li>
               <li>
-                <NuxtLink to="/tentang/" title="tentang">tentang</NuxtLink>
+                <NuxtLink to="/tentang/" title="tentang">{{
+                  $t('menu.tentang')
+                }}</NuxtLink>
               </li>
             </ul>
           </transition>

@@ -1,13 +1,13 @@
+import i18n from './config/i18n'
+
 export default {
   env: {
     apiURL: process.env.NUXT_ENV_API_ENDPOINT || 'http://localhost:9999',
   },
-  // Target: https://go.nuxtjs.dev/config-target
   target: 'static',
 
-  // Global page headers: https://go.nuxtjs.dev/config-head
   head: {
-    title: 'hasyemiraws-v4',
+    title: "hasyemiraws's journal",
     htmlAttrs: {
       lang: 'en',
     },
@@ -39,7 +39,26 @@ export default {
   ],
 
   // Modules: https://go.nuxtjs.dev/config-modules
-  modules: ['@nuxtjs/axios'],
+  modules: [
+    '@nuxtjs/axios',
+    [
+      '@nuxtjs/i18n',
+      {
+        locales: [
+          {
+            code: 'en',
+            iso: 'en-US',
+          },
+          {
+            code: 'id',
+            iso: 'id-ID',
+          },
+        ],
+        defaultLocale: 'id',
+        vueI18n: i18n,
+      },
+    ],
+  ],
 
   // Build Configuration: https://go.nuxtjs.dev/config-build
   build: {
